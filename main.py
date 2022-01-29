@@ -98,8 +98,6 @@ def compare():
     print(f"display_words: {showed_words}")
 
 
-
-
 window = Tk()
 window.title("Typing Speed Test")
 window.config(padx=50, pady=50, bg=BACKGROUND)
@@ -111,7 +109,7 @@ restart_btn_img = PhotoImage(file="reload.png")
 
 # Creating UI
 canvas.create_image(200, 132, image=word_card_img)
-word_show = canvas.create_text(200, 132, text="-press enter to start-\npress the space bar after each word", font=("Courier", 14, "bold"), fill="white", justify="center", width=250)
+word_show = canvas.create_text(200, 132, text="press the space bar after each word\n*Don't need to care about upper case\n\n-press enter to start-", font=("Courier", 14, "bold"), fill="white", justify="center", width=250)
 canvas.grid(row=2, column=1, columnspan=6)
 
 cpm_label = Label(text="Corrected CPM: ", font=("Arial", 12), bg=BACKGROUND)
@@ -138,7 +136,6 @@ window.bind("<Return>", start)
 restart_button = Button(image=restart_btn_img, bd=0, relief="flat",
                         highlightthickness=0, bg=BACKGROUND, command=restart)
 restart_button.grid(row=4, column=3, columnspan=2, padx=10, pady=10, sticky="W")
-
 
 
 window.mainloop()
